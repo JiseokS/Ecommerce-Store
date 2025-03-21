@@ -22,15 +22,12 @@ interface CategoryPageProps {
   };
 }
 
-const CategoryId = async ({ params, searchParams }: CategoryPageProps) => {
+// React.FC 타입 제거하고 일반 async 함수로 선언
+const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
   const { categoryId } = params;
   const { colorId, sizeId } = searchParams;
   
-  const products = await getProducts({
-    categoryId,
-    colorId,
-    sizeId,
-  });
+  const products = await getProducts({ categoryId, colorId, sizeId });
   const sizes = await getSizes();
   const colors = await getColors();
   const category = await getCategory(categoryId);
@@ -61,4 +58,4 @@ const CategoryId = async ({ params, searchParams }: CategoryPageProps) => {
   );
 };
 
-export default CategoryId;
+export default CategoryPage;
