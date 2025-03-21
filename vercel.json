@@ -1,0 +1,8 @@
+{
+    "build": {
+      "env": {
+        "TS_NODE_COMPILER_OPTIONS": "{\"strict\": false}"
+      }
+    }
+  }
+  
