@@ -22,7 +22,6 @@ interface CategoryPageProps {
   };
 }
 
-// React.FC 타입 제거하고 일반 async 함수로 선언
 const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
   const { categoryId } = params;
   const { colorId, sizeId } = searchParams;
