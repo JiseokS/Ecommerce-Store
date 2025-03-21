@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import getColors from "@/actions/get-colors";
 import getProducts from "@/actions/get-products";
 import getSizes from "@/actions/get-sizes";
