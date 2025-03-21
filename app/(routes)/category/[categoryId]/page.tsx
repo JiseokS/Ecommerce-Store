@@ -10,7 +10,7 @@ import ProductCard from "@/components/ui/product-card";
 import Filter from "./components/filter";
 import MobileFilter from "./components/mobile-filter";
 
-export const revalidate = 0
+export const revalidate = 0;
 
 interface CategoryPageProps{
     params: {
@@ -26,13 +26,15 @@ const CategoryId: React.FC<CategoryPageProps> = async ({
     params,
     searchParams
 }) =>{
-    const { categoryId } = await Promise.resolve(params);
-    const { colorId, sizeId } = await Promise.resolve(searchParams);
-    
+    //const { categoryId } = await Promise.resolve(params);
+    //const { colorId, sizeId } = await Promise.resolve(searchParams);
+    const { categoryId } = params;
+    const { colorId, sizeId } = searchParams;
+
     const products = await getProducts({
-        categoryId: categoryId,
-        colorId: colorId,
-        sizeId: sizeId
+        categoryId,
+        colorId,
+        sizeId,
     });
     const sizes = await getSizes();
     const colors = await getColors();
